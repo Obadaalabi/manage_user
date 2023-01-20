@@ -1,0 +1,5 @@
+<app-login *ngIf="!isAuth"  (islogin)="islogin($event)"></app-login>
+<app-navbar *ngIf="isAuth" (islogin)="islogin($event)"></app-navbar>
+<router-outlet routerLinkActive="active"></router-outlet>
+
+

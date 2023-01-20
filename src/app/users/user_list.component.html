@@ -1,0 +1,43 @@
+
+<div class="card">
+  <div class="card-header">
+  </div>
+  <div class="card-body">
+
+    <div class="table-responsive" *ngIf="userList.length">
+      <table class="table">
+        <thead>
+          <tr style="color: blue;">
+
+            <th>id</th>
+            <th>full name</th>
+            <th>email</th>
+
+            <th>avatar</th>
+          </tr>
+        </thead>
+        <tbody >
+
+         <tr *ngFor="let item of userList | paginate: { itemsPerPage: dataList?.per_page, currentPage: currentPage,totalItems: dataList?.total }" >
+
+          <td>{{ item.id }}</td>
+          <td><a [routerLink]="['/user/',item.id]" >
+            {{ item.first_name |concat:item.first_name:item.last_name}}
+          </a></td>
+          <td>{{ item.email }}</td>
+          <td><img [src]="item.avatar"[title]="item.first_name" alt="avatar" width="50" height="50"></td>
+
+         </tr>
+
+         <tr>
+         <td colspan="4" style="text-align: center;">
+          <pagination-controls  (pageChange)="pageChange($event)">
+
+          </pagination-controls></td>
+         </tr>
+
+        </tbody>
+      </table>
+    </div>
+</div>
+</div>

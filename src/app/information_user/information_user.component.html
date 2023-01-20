@@ -1,0 +1,49 @@
+<section class="vh-100" style="background-color: #508bfc;">
+ <div class="container py-5 h-100" >
+  <div class="row d-flex justify-content-center align-items-center h-100 ">
+    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+      <div class="card shadow-2-strong" style="border-radius: 1rem;">
+        <div class="card-body p-5 text-center"  >
+          <h3 class="mb-5">Information</h3>
+          <div class="table-responsive" *ngIf="user.length">
+            <table class="table"  >
+
+                <tr><th colspan="2"><img [src]="user[0].avatar" alt="avatar" width="300" height="300"></th></tr>
+                <br>
+
+                <tr> <th>id :</th>
+                  <th>{{ user[0].id }}</th>
+                 </tr>
+
+                <tr>
+                   <th>first name :</th>
+                   <th>{{ user[0].first_name }}</th>
+                   </tr>
+
+                <tr>
+                   <th>last name :</th>
+                   <th>{{ user[0].last_name }}</th>
+                   </tr>
+
+                <tr>
+                  <th>email :</th>
+                  <th>{{ user[0].email }}</th>
+                </tr>
+
+             </table>
+             <hr>
+             <a   [routerLink]="['/users/',1]"><h5>Back</h5></a>
+            </div>
+            </div>
+          </div>
+        </div>
+       </div>
+     </div>
+
+    </section>
+
+
+
+
+
+
